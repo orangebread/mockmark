@@ -1,6 +1,21 @@
-# MockMark
+<p align="center">
+  <img src="assets/mockmark_logo.png" alt="MockMark Logo" width="180" />
+</p>
 
-Development-only visual indicators for mock data in React applications.
+<h1 align="center">MockMark</h1>
+
+<p align="center">
+  <strong>Development-only visual indicators for mock data in React applications.</strong>
+</p>
+
+<p align="center">
+  <a href="#installation">Installation</a> •
+  <a href="#usage">Usage</a> •
+  <a href="#variants">Variants</a> •
+  <a href="#props">Props</a>
+</p>
+
+---
 
 ## Installation
 
