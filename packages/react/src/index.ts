@@ -2,14 +2,16 @@
 export { MockMark } from "./MockMark"
 export { MockMarkProvider } from "./Provider"
 
-// Context and hooks
+// Context & hooks
 export { useMockMark, MockMarkContext } from "./context"
 
-// Types
+// Types (re-export from core + React-specific)
+export type { MockMarkProps } from "./types"
 export type {
-    MockMarkProps,
     MockMarkVariant,
+    TooltipTrigger,
     MockMarkTheme,
     MockMarkConfig,
     MockMarkContextValue,
-} from "./types"
+    MockMarkColorOverrides,
+} from "@mockmark/core"

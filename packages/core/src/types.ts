@@ -1,5 +1,3 @@
-import * as React from "react"
-
 /**
  * Visual style variants for MockMark
  */
@@ -45,25 +43,19 @@ export interface MockMarkConfig {
 }
 
 /**
- * Props for the MockMark component
+ * Context value type with required fields + defaults
  */
-export interface MockMarkProps {
-    /** Label displayed on the indicator badge */
-    label?: string
-    /** Reason/description shown in tooltip */
-    reason?: string
-    /** Alias for reason - description shown in tooltip */
-    description?: string
-    /** Visual style variant */
-    variant?: MockMarkVariant
-    /** Force disable this specific indicator */
-    disabled?: boolean
-    /** Children to wrap */
-    children: React.ReactNode
-    /** Additional CSS class name */
-    className?: string
-    /** Additional inline styles */
-    style?: React.CSSProperties
+export interface MockMarkContextValue {
+    enabled: boolean
+    defaultVariant: MockMarkVariant
+    theme: Required<MockMarkTheme>
+    tooltipTrigger: TooltipTrigger
+}
+
+/**
+ * Per-instance color overrides for MockMark component
+ */
+export interface MockMarkColorOverrides {
     /** Override label badge background color */
     labelBg?: string
     /** Override label badge text color */
@@ -75,14 +67,3 @@ export interface MockMarkProps {
     /** Override tooltip text color */
     tooltipColor?: string
 }
-
-/**
- * Context value type with required fields + defaults
- */
-export interface MockMarkContextValue {
-    enabled: boolean
-    defaultVariant: MockMarkVariant
-    theme: Required<MockMarkTheme>
-    tooltipTrigger: TooltipTrigger
-}
-

@@ -1,5 +1,5 @@
 {
-  "name": "example",
+  "name": "react-demo",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -10,7 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "mockmark": "file:..",
+    "mockmark": "workspace:*",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },

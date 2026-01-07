@@ -1,56 +1,20 @@
 {
-    "name": "mockmark",
-    "version": "0.1.0",
-    "description": "Development-only visual indicators for mock data in React applications",
-    "main": "dist/index.js",
-    "module": "dist/index.mjs",
-    "types": "dist/index.d.ts",
-    "exports": {
-        ".": {
-            "import": {
-                "types": "./dist/index.d.mts",
-                "default": "./dist/index.mjs"
-            },
-            "require": {
-                "types": "./dist/index.d.ts",
-                "default": "./dist/index.js"
-            }
-        }
-    },
-    "files": [
-        "dist",
-        "README.md"
-    ],
+    "name": "mockmark-monorepo",
+    "private": true,
     "scripts": {
-        "build": "tsup",
-        "typecheck": "tsc --noEmit",
-        "prepublishOnly": "npm run build",
-        "dev:example": "npm run build && cd example && npm run dev"
-    },
-    "peerDependencies": {
-        "react": ">=18.0.0",
-        "react-dom": ">=18.0.0"
+        "build": "pnpm -r build",
+        "build:core": "pnpm --filter @mockmark/core build",
+        "build:react": "pnpm --filter mockmark build",
+        "typecheck": "pnpm -r typecheck",
+        "dev:react": "pnpm --filter react-demo dev",
+        "dev:vue": "pnpm --filter vue-demo dev",
+        "dev:angular": "pnpm --filter angular-demo dev"
     },
     "devDependencies": {
-        "@types/react": "^19.0.0",
-        "@types/react-dom": "^19.0.0",
-        "tsup": "^8.0.0",
         "typescript": "^5.0.0"
     },
-    "keywords": [
-        "react",
-        "mock",
-        "development",
-        "debugging",
-        "visualization",
-        "indicator",
-        "mock-data"
-    ],
-    "author": "jlee",
-    "license": "MIT",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/orangebread/mockmark"
+    "engines": {
+        "node": ">=18"
     },
-    "sideEffects": false
+    "packageManager": "pnpm@9.0.0"
 }

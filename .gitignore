@@ -1,6 +1,8 @@
 # Dependencies
 node_modules/
-example/node_modules/
+
+# Framework Artifacts
+.angular/
 
 # Build output (tsup generates dist/)
 dist/

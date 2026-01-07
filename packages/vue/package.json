@@ -1,0 +1,51 @@
+{
+    "name": "@mockmark/vue",
+    "version": "0.1.0",
+    "description": "Development-only visual indicators for mock data in Vue applications",
+    "main": "dist/index.js",
+    "module": "dist/index.mjs",
+    "types": "dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/index.d.mts",
+                "default": "./dist/index.mjs"
+            },
+            "require": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            }
+        }
+    },
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup",
+        "typecheck": "vue-tsc --noEmit"
+    },
+    "peerDependencies": {
+        "vue": "^3.0.0"
+    },
+    "dependencies": {
+        "@mockmark/core": "workspace:*"
+    },
+    "devDependencies": {
+        "tsup": "^8.0.0",
+        "typescript": "^5.0.0",
+        "vue": "^3.5.0",
+        "vue-tsc": "^2.0.0"
+    },
+    "keywords": [
+        "vue",
+        "mock",
+        "development",
+        "debugging",
+        "visualization",
+        "indicator",
+        "mock-data"
+    ],
+    "author": "jlee",
+    "license": "MIT",
+    "sideEffects": false
+}

@@ -1,8 +1,9 @@
 "use client"
 
 import * as React from "react"
-import { MockMarkContext, mergeTheme } from "./context"
-import type { MockMarkConfig } from "./types"
+import { MockMarkContext } from "./context"
+import type { MockMarkConfig } from "@mockmark/core"
+import { mergeTheme } from "@mockmark/core"
 
 interface MockMarkProviderProps extends MockMarkConfig {
     children: React.ReactNode
