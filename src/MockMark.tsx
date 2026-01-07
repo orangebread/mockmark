@@ -29,10 +29,24 @@ export function MockMark({
     children,
     className,
     style,
+    labelBg,
+    labelColor,
+    borderColor,
+    tooltipBg,
+    tooltipColor,
 }: MockMarkProps) {
     const config = useMockMark()
     const resolvedVariant = variant ?? config.defaultVariant
-    const theme = mergeTheme(config.theme)
+    // Merge global theme with per-instance overrides
+    const baseTheme = mergeTheme(config.theme)
+    const theme = {
+        ...baseTheme,
+        ...(labelBg && { labelBg }),
+        ...(labelColor && { labelColor }),
+        ...(borderColor && { borderColor }),
+        ...(tooltipBg && { tooltipBg }),
+        ...(tooltipColor && { tooltipColor }),
+    }
     const tooltipText = reason ?? description
     const [tooltipVisible, setTooltipVisible] = React.useState(false)
 

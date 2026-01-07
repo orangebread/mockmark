@@ -64,6 +64,16 @@ export interface MockMarkProps {
     className?: string
     /** Additional inline styles */
     style?: React.CSSProperties
+    /** Override label badge background color */
+    labelBg?: string
+    /** Override label badge text color */
+    labelColor?: string
+    /** Override border/outline color */
+    borderColor?: string
+    /** Override tooltip background color */
+    tooltipBg?: string
+    /** Override tooltip text color */
+    tooltipColor?: string
 }
 
 /**

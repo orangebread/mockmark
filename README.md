@@ -100,6 +100,11 @@ MockMark displays the `reason` prop as an elegant tooltip. Choose how tooltips a
 | `reason` | string | - | Tooltip description |
 | `variant` | 'border' \| 'badge' \| 'minimal' | 'border' | Visual style |
 | `disabled` | boolean | false | Force hide this instance |
+| `labelBg` | string | - | Override label badge background color |
+| `labelColor` | string | - | Override label text color |
+| `borderColor` | string | - | Override border/outline color |
+| `tooltipBg` | string | - | Override tooltip background color |
+| `tooltipColor` | string | - | Override tooltip text color |
 
 ### MockMarkProvider
 
@@ -128,7 +133,7 @@ interface MockMarkTheme {
 
 See MockMark in action using the included demo app. It showcases all variants and usage patterns in a realistic React environment.
 
-![MockMark Demo Preview](assets/mock_demo.png)
+![MockMark Demo Preview](assets/mockmark_demo.png)
 
 To run the demo locally:
 
