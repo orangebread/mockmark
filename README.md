@@ -9,9 +9,9 @@
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/mocksee"><img src="https://img.shields.io/npm/v/mocksee.svg" alt="npm version" /></a>
-  <a href="https://www.npmjs.com/package/mocksee"><img src="https://img.shields.io/npm/dm/mocksee.svg" alt="npm downloads" /></a>
-  <a href="https://github.com/user/mocksee/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/mocksee.svg" alt="license" /></a>
+  <a href="https://www.npmjs.com/package/@mocksee/react"><img src="https://img.shields.io/npm/v/@mocksee/react.svg" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/@mocksee/react"><img src="https://img.shields.io/npm/dm/@mocksee/react.svg" alt="npm downloads" /></a>
+  <a href="https://github.com/orangebread/mocksee/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/@mocksee/react.svg" alt="license" /></a>
 </p>
 
 <p align="center">
@@ -48,7 +48,7 @@ Unlike `// TODO` comments buried in code, MockSee surfaces incomplete work direc
 ### React
 
 ```bash
-npm install mocksee
+npm install @mocksee/react
 ```
 
 ### Vue
@@ -70,7 +70,7 @@ npm install @mocksee/angular
 ### React
 
 ```tsx
-import { MockSee, MockSeeProvider } from 'mocksee'
+import { MockSee, MockSeeProvider } from '@mocksee/react'
 
 // Wrap your app with the provider
 function App() {
@@ -149,7 +149,7 @@ export class AppComponent {
 ### Global Configuration (React)
 
 ```tsx
-import { MockSeeProvider } from 'mocksee'
+import { MockSeeProvider } from '@mocksee/react'
 
 function App() {
   return (
@@ -289,10 +289,10 @@ npm run dev:angular
 
 | Package | Description |
 |---------|-------------|
-| [`mocksee`](https://www.npmjs.com/package/mocksee) | React adapter |
+| [`@mocksee/react`](https://www.npmjs.com/package/@mocksee/react) | React adapter |
 | [`@mocksee/vue`](https://www.npmjs.com/package/@mocksee/vue) | Vue 3 adapter |
 | [`@mocksee/angular`](https://www.npmjs.com/package/@mocksee/angular) | Angular 17+ adapter |
-| `@mocksee/core` | Framework-agnostic core (internal) |
+| [`@mocksee/core`](https://www.npmjs.com/package/@mocksee/core) | Framework-agnostic core |
 
 ---
 
@@ -302,7 +302,7 @@ We welcome contributions! This is a pnpm monorepo.
 
 ```bash
 # Clone the repo
-git clone https://github.com/user/mocksee.git
+git clone https://github.com/orangebread/mocksee.git
 cd mocksee
 
 # Install dependencies
@@ -321,7 +321,7 @@ pnpm dev:react
 mocksee/
 ├── packages/
 │   ├── core/      # Framework-agnostic utilities and styles
-│   ├── react/     # React adapter (published as `mocksee`)
+│   ├── react/     # React adapter (published as `@mocksee/react`)
 │   ├── vue/       # Vue adapter
 │   └── angular/   # Angular adapter
 └── examples/
