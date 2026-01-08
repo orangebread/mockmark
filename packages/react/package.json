@@ -1,5 +1,5 @@
 {
-    "name": "mocksee",
+    "name": "@mocksee/react",
     "version": "0.2.0",
     "description": "Development-only visual indicators for mock data in React applications",
     "main": "dist/index.js",
