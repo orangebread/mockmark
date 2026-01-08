@@ -6,5 +6,5 @@ export default defineConfig({
     dts: true,
     clean: true,
     sourcemap: true,
-    external: ["@angular/core", "@angular/common", "@mockmark/core", "rxjs"],
+    external: ["@angular/core", "@angular/common", "@mocksee/core", "rxjs"],
 })

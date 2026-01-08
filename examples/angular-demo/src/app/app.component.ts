@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from "@angular/core"
 import { CommonModule } from "@angular/common"
-import { MockMarkComponent, MockMarkService } from "@mockmark/angular"
+import { MockSeeComponent, MockSeeService } from "@mocksee/angular"
 
 interface Advisor {
     id: number
@@ -12,11 +12,11 @@ interface Advisor {
 @Component({
     selector: "app-root",
     standalone: true,
-    imports: [CommonModule, MockMarkComponent],
+    imports: [CommonModule, MockSeeComponent],
     template: `
         <div class="app">
             <header class="header">
-                <h1>MockMark Angular Demo</h1>
+                <h1>MockSee Angular Demo</h1>
                 <p>Development-only visual indicators for mock data</p>
             </header>
 
@@ -26,7 +26,7 @@ interface Advisor {
                     <h2>Border Variant <span class="variant-tag">default</span></h2>
                     <p class="description">Wraps content with a dashed border and floating label.</p>
 
-                    <mock-mark label="Advisors" reason="Hardcoded mock data - not connected to API">
+                    <mock-see label="Advisors" reason="Hardcoded mock data - not connected to API">
                         <div class="card-grid">
                             @for (advisor of mockAdvisors; track advisor.id) {
                                 <div class="card">
@@ -36,7 +36,7 @@ interface Advisor {
                                 </div>
                             }
                         </div>
-                    </mock-mark>
+                    </mock-see>
                 </section>
 
                 <!-- Badge Variant -->
@@ -44,7 +44,7 @@ interface Advisor {
                     <h2>Badge Variant</h2>
                     <p class="description">Just the label badge, positioned absolutely.</p>
 
-                    <mock-mark variant="badge" label="Stats" reason="Static placeholder values">
+                    <mock-see variant="badge" label="Stats" reason="Static placeholder values">
                         <div class="stats-panel">
                             <div class="stat">
                                 <span class="stat-value">{{ mockStats.totalUsers | number }}</span>
@@ -59,7 +59,7 @@ interface Advisor {
                                 <span class="stat-label">Revenue</span>
                             </div>
                         </div>
-                    </mock-mark>
+                    </mock-see>
                 </section>
 
                 <!-- Minimal Variant -->
@@ -67,7 +67,7 @@ interface Advisor {
                     <h2>Minimal Variant</h2>
                     <p class="description">Thin outline with corner label - less intrusive.</p>
 
-                    <mock-mark variant="minimal" label="Chart" description="Placeholder chart data">
+                    <mock-see variant="minimal" label="Chart" description="Placeholder chart data">
                         <div class="chart-placeholder">
                             <div class="chart-bar" style="height: 60%"></div>
                             <div class="chart-bar" style="height: 80%"></div>
@@ -75,7 +75,7 @@ interface Advisor {
                             <div class="chart-bar" style="height: 90%"></div>
                             <div class="chart-bar" style="height: 70%"></div>
                         </div>
-                    </mock-mark>
+                    </mock-see>
                 </section>
 
                 <!-- Click Trigger Mode -->
@@ -87,12 +87,12 @@ interface Advisor {
                         Current: {{ isClickMode ? 'Click' : 'Hover' }} Mode
                     </button>
 
-                    <mock-mark label="Clickable" reason="Click the label to see this tooltip! Click mode allows clicking through to content.">
+                    <mock-see label="Clickable" reason="Click the label to see this tooltip! Click mode allows clicking through to content.">
                         <div class="card">
                             <h3>Click-to-Reveal Tooltip</h3>
                             <p>The tooltip appears based on the current trigger mode.</p>
                         </div>
-                    </mock-mark>
+                    </mock-see>
                 </section>
 
                 <!-- Disabled Indicator -->
@@ -100,30 +100,30 @@ interface Advisor {
                     <h2>Disabled Indicator</h2>
                     <p class="description">Use the disabled prop to hide indicators for specific instances.</p>
 
-                    <mock-mark [disabled]="true" label="Hidden" reason="This won't show">
+                    <mock-see [disabled]="true" label="Hidden" reason="This won't show">
                         <div class="card">
                             <h3>Real Data Component</h3>
                             <p>This component uses real data, so the indicator is disabled.</p>
                         </div>
-                    </mock-mark>
+                    </mock-see>
                 </section>
 
                 <!-- Nested Indicators -->
                 <section class="section">
                     <h2>Nested Indicators</h2>
-                    <p class="description">MockMark works correctly when nested.</p>
+                    <p class="description">MockSee works correctly when nested.</p>
 
-                    <mock-mark label="Outer" reason="Outer container mock">
+                    <mock-see label="Outer" reason="Outer container mock">
                         <div class="nested-container">
                             <p>Outer mock container</p>
-                            <mock-mark variant="minimal" label="Inner" reason="Inner component mock">
+                            <mock-see variant="minimal" label="Inner" reason="Inner component mock">
                                 <div class="card">
                                     <h3>Nested Content</h3>
                                     <p>This has its own indicator.</p>
                                 </div>
-                            </mock-mark>
+                            </mock-see>
                         </div>
-                    </mock-mark>
+                    </mock-see>
                 </section>
 
                 <!-- Custom Colors -->
@@ -131,7 +131,7 @@ interface Advisor {
                     <h2>Custom Colors</h2>
                     <p class="description">Per-instance color overrides.</p>
 
-                    <mock-mark 
+                    <mock-see 
                         label="Custom" 
                         reason="Using custom purple theme"
                         labelBg="#8b5cf6"
@@ -140,9 +140,9 @@ interface Advisor {
                     >
                         <div class="card">
                             <h3>Custom Styled</h3>
-                            <p>This MockMark uses custom purple colors.</p>
+                            <p>This MockSee uses custom purple colors.</p>
                         </div>
-                    </mock-mark>
+                    </mock-see>
                 </section>
             </main>
 
@@ -169,7 +169,7 @@ interface Advisor {
     `],
 })
 export class AppComponent implements OnInit {
-    private readonly mockMarkService = inject(MockMarkService)
+    private readonly mockMarkService = inject(MockSeeService)
 
     isClickMode = false
 
@@ -186,7 +186,7 @@ export class AppComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // Configure MockMark globally
+        // Configure MockSee globally
         this.mockMarkService.configure({
             enabled: true,
             defaultVariant: "border",

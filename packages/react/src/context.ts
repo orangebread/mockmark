@@ -1,23 +1,23 @@
 "use client"
 
 import * as React from "react"
-import type { MockMarkContextValue } from "@mockmark/core"
-import { defaultTheme } from "@mockmark/core"
+import type { MockSeeContextValue } from "@mocksee/core"
+import { defaultTheme } from "@mocksee/core"
 
-const defaultConfig: MockMarkContextValue = {
+const defaultConfig: MockSeeContextValue = {
     enabled: true,
     defaultVariant: "border",
     theme: defaultTheme,
     tooltipTrigger: "hover",
 }
 
-export const MockMarkContext = React.createContext<MockMarkContextValue>(defaultConfig)
+export const MockSeeContext = React.createContext<MockSeeContextValue>(defaultConfig)
 
 /**
- * Hook to access MockMark configuration
+ * Hook to access MockSee configuration
  */
-export function useMockMark(): MockMarkContextValue {
-    return React.useContext(MockMarkContext)
+export function useMockSee(): MockSeeContextValue {
+    return React.useContext(MockSeeContext)
 }
 
 export { defaultConfig }

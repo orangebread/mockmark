@@ -1,35 +1,35 @@
 "use client"
 
 import * as React from "react"
-import { MockMarkContext } from "./context"
-import type { MockMarkConfig } from "@mockmark/core"
-import { mergeTheme } from "@mockmark/core"
+import { MockSeeContext } from "./context"
+import type { MockSeeConfig } from "@mocksee/core"
+import { mergeTheme } from "@mocksee/core"
 
-interface MockMarkProviderProps extends MockMarkConfig {
+interface MockSeeProviderProps extends MockSeeConfig {
     children: React.ReactNode
 }
 
 /**
- * Provider component for global MockMark configuration.
+ * Provider component for global MockSee configuration.
  * 
  * @example
  * ```tsx
- * <MockMarkProvider 
+ * <MockSeeProvider 
  *   enabled={process.env.NODE_ENV === 'development'}
  *   theme={{ borderColor: '#8b5cf6' }}
  *   tooltipTrigger="click"
  * >
  *   <App />
- * </MockMarkProvider>
+ * </MockSeeProvider>
  * ```
  */
-export function MockMarkProvider({
+export function MockSeeProvider({
     enabled = true,
     defaultVariant = "border",
     theme,
     tooltipTrigger = "hover",
     children,
-}: MockMarkProviderProps) {
+}: MockSeeProviderProps) {
     const value = React.useMemo(
         () => ({
             enabled,
@@ -41,8 +41,8 @@ export function MockMarkProvider({
     )
 
     return (
-        <MockMarkContext.Provider value={value}>
+        <MockSeeContext.Provider value={value}>
             {children}
-        </MockMarkContext.Provider>
+        </MockSeeContext.Provider>
     )
 }

@@ -9,7 +9,7 @@
         "preview": "vite preview"
     },
     "dependencies": {
-        "@mockmark/vue": "workspace:*",
+        "@mocksee/vue": "workspace:*",
         "vue": "^3.5.0"
     },
     "devDependencies": {

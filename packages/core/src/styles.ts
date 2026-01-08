@@ -1,20 +1,20 @@
-import type { MockMarkTheme, MockMarkVariant } from "./types"
+import type { MockSeeTheme, MockSeeVariant } from "./types"
 
 export interface ContainerStyleOptions {
-    variant: MockMarkVariant
-    theme: Required<MockMarkTheme>
+    variant: MockSeeVariant
+    theme: Required<MockSeeTheme>
     baseStyle?: Record<string, unknown>
 }
 
 export interface LabelStyleOptions {
-    variant: MockMarkVariant
-    theme: Required<MockMarkTheme>
+    variant: MockSeeVariant
+    theme: Required<MockSeeTheme>
     isClickable: boolean
 }
 
 export interface TooltipStyleOptions {
-    variant: MockMarkVariant
-    theme: Required<MockMarkTheme>
+    variant: MockSeeVariant
+    theme: Required<MockSeeTheme>
     visible: boolean
 }
 
@@ -112,7 +112,7 @@ export function getTooltipStyles(options: TooltipStyleOptions): Record<string, u
 /**
  * Generate tooltip arrow styles
  */
-export function getArrowStyles(theme: Required<MockMarkTheme>): Record<string, unknown> {
+export function getArrowStyles(theme: Required<MockSeeTheme>): Record<string, unknown> {
     return {
         position: "absolute",
         top: "-4px",

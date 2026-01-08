@@ -1,35 +1,35 @@
 import { inject, provide, reactive, type InjectionKey } from "vue"
-import type { MockMarkContextValue } from "@mockmark/core"
-import { defaultTheme, mergeTheme } from "@mockmark/core"
-import type { MockMarkConfig } from "@mockmark/core"
+import type { MockSeeContextValue } from "@mocksee/core"
+import { defaultTheme, mergeTheme } from "@mocksee/core"
+import type { MockSeeConfig } from "@mocksee/core"
 
-const defaultConfig: MockMarkContextValue = {
+const defaultConfig: MockSeeContextValue = {
     enabled: true,
     defaultVariant: "border",
     theme: defaultTheme,
     tooltipTrigger: "hover",
 }
 
-export const MockMarkKey: InjectionKey<MockMarkContextValue> = Symbol("MockMark")
+export const MockSeeKey: InjectionKey<MockSeeContextValue> = Symbol("MockSee")
 
 /**
- * Composable to access MockMark configuration
+ * Composable to access MockSee configuration
  */
-export function useMockMark(): MockMarkContextValue {
-    return inject(MockMarkKey, defaultConfig)
+export function useMockSee(): MockSeeContextValue {
+    return inject(MockSeeKey, defaultConfig)
 }
 
 /**
- * Provide MockMark configuration to child components
+ * Provide MockSee configuration to child components
  */
-export function provideMockMark(config: MockMarkConfig = {}) {
-    const value = reactive<MockMarkContextValue>({
+export function provideMockSee(config: MockSeeConfig = {}) {
+    const value = reactive<MockSeeContextValue>({
         enabled: config.enabled ?? true,
         defaultVariant: config.defaultVariant ?? "border",
         theme: mergeTheme(config.theme),
         tooltipTrigger: config.tooltipTrigger ?? "hover",
     })
-    provide(MockMarkKey, value)
+    provide(MockSeeKey, value)
     return value
 }
 

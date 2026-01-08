@@ -7,8 +7,8 @@ import {
     onUnmounted,
     type PropType,
 } from "vue"
-import { useMockMark } from "./useConfig"
-import type { MockMarkVariant, TooltipFormat } from "@mockmark/core"
+import { useMockSee } from "./useConfig"
+import type { MockSeeVariant, TooltipFormat } from "@mocksee/core"
 import {
     mergeTheme,
     applyColorOverrides,
@@ -17,10 +17,10 @@ import {
     getTooltipStyles,
     getArrowStyles,
     parseMarkdown,
-} from "@mockmark/core"
+} from "@mocksee/core"
 
-export const MockMark = defineComponent({
-    name: "MockMark",
+export const MockSee = defineComponent({
+    name: "MockSee",
     props: {
         label: {
             type: String,
@@ -35,7 +35,7 @@ export const MockMark = defineComponent({
             default: undefined,
         },
         variant: {
-            type: String as PropType<MockMarkVariant>,
+            type: String as PropType<MockSeeVariant>,
             default: undefined,
         },
         disabled: {
@@ -68,7 +68,7 @@ export const MockMark = defineComponent({
         },
     },
     setup(props, { slots }) {
-        const config = useMockMark()
+        const config = useMockSee()
         const tooltipVisible = ref(false)
 
         const resolvedVariant = computed(() => props.variant ?? config.defaultVariant)
@@ -203,4 +203,3 @@ export const MockMark = defineComponent({
         }
     },
 })
-

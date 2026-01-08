@@ -1,4 +1,4 @@
-import { MockMark, MockMarkProvider } from 'mockmark'
+import { MockSee, MockSeeProvider } from 'mocksee'
 import './App.css'
 
 // Sample mock data for demonstration
@@ -16,10 +16,10 @@ const mockStats = {
 
 function App() {
   return (
-    <MockMarkProvider tooltipTrigger="hover">
+    <MockSeeProvider tooltipTrigger="hover">
       <div className="app">
         <header className="header">
-          <h1>MockMark Demo</h1>
+          <h1>MockSee Demo</h1>
           <p>Development-only visual indicators for mock data</p>
         </header>
 
@@ -29,7 +29,7 @@ function App() {
             <h2>Border Variant <span className="variant-tag">default</span></h2>
             <p className="description">Wraps content with a dashed border and floating label.</p>
 
-            <MockMark label="Advisors" reason="Hardcoded mock data - not connected to API">
+            <MockSee label="Advisors" reason="Hardcoded mock data - not connected to API">
               <div className="card-grid">
                 {mockAdvisors.map(advisor => (
                   <div key={advisor.id} className="card">
@@ -39,7 +39,7 @@ function App() {
                   </div>
                 ))}
               </div>
-            </MockMark>
+            </MockSee>
           </section>
 
           {/* Badge Variant */}
@@ -47,7 +47,7 @@ function App() {
             <h2>Badge Variant</h2>
             <p className="description">Just the label badge, positioned absolutely.</p>
 
-            <MockMark variant="badge" label="Stats" reason="Static placeholder values">
+            <MockSee variant="badge" label="Stats" reason="Static placeholder values">
               <div className="stats-panel">
                 <div className="stat">
                   <span className="stat-value">{mockStats.totalUsers.toLocaleString()}</span>
@@ -62,7 +62,7 @@ function App() {
                   <span className="stat-label">Revenue</span>
                 </div>
               </div>
-            </MockMark>
+            </MockSee>
           </section>
 
           {/* Minimal Variant */}
@@ -70,7 +70,7 @@ function App() {
             <h2>Minimal Variant</h2>
             <p className="description">Thin outline with corner label - less intrusive.</p>
 
-            <MockMark variant="minimal" label="Chart" description="Placeholder chart data">
+            <MockSee variant="minimal" label="Chart" description="Placeholder chart data">
               <div className="chart-placeholder">
                 <div className="chart-bar" style={{ height: '60%' }} />
                 <div className="chart-bar" style={{ height: '80%' }} />
@@ -78,7 +78,7 @@ function App() {
                 <div className="chart-bar" style={{ height: '90%' }} />
                 <div className="chart-bar" style={{ height: '70%' }} />
               </div>
-            </MockMark>
+            </MockSee>
           </section>
 
           {/* Click Trigger Example */}
@@ -86,14 +86,14 @@ function App() {
             <h2>Click Trigger Mode</h2>
             <p className="description">Use tooltipTrigger="click" on the provider. Click the label to toggle tooltip.</p>
 
-            <MockMarkProvider tooltipTrigger="click">
-              <MockMark label="Clickable" reason="Click the label to see this tooltip! Click mode allows clicking through to content.">
+            <MockSeeProvider tooltipTrigger="click">
+              <MockSee label="Clickable" reason="Click the label to see this tooltip! Click mode allows clicking through to content.">
                 <div className="card">
                   <h3>Click-to-Reveal Tooltip</h3>
                   <p>The tooltip only appears when the label is clicked.</p>
                 </div>
-              </MockMark>
-            </MockMarkProvider>
+              </MockSee>
+            </MockSeeProvider>
           </section>
 
           {/* Disabled Example */}
@@ -101,30 +101,30 @@ function App() {
             <h2>Disabled Indicator</h2>
             <p className="description">Use the disabled prop to hide indicators for specific instances.</p>
 
-            <MockMark disabled label="Hidden" reason="This won't show">
+            <MockSee disabled label="Hidden" reason="This won't show">
               <div className="card">
                 <h3>Real Data Component</h3>
                 <p>This component uses real data, so the indicator is disabled.</p>
               </div>
-            </MockMark>
+            </MockSee>
           </section>
 
           {/* Nested Example */}
           <section className="section">
             <h2>Nested Indicators</h2>
-            <p className="description">MockMark works correctly when nested.</p>
+            <p className="description">MockSee works correctly when nested.</p>
 
-            <MockMark label="Outer" reason="Outer container mock">
+            <MockSee label="Outer" reason="Outer container mock">
               <div className="nested-container">
                 <p>Outer mock container</p>
-                <MockMark variant="minimal" label="Inner" reason="Inner component mock">
+                <MockSee variant="minimal" label="Inner" reason="Inner component mock">
                   <div className="card">
                     <h3>Nested Content</h3>
                     <p>This has its own indicator.</p>
                   </div>
-                </MockMark>
+                </MockSee>
               </div>
-            </MockMark>
+            </MockSee>
           </section>
         </main>
 
@@ -132,7 +132,7 @@ function App() {
           <p>Hover or click labels to see detailed mock reasons</p>
         </footer>
       </div>
-    </MockMarkProvider>
+    </MockSeeProvider>
   )
 }
 

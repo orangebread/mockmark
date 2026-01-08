@@ -1,17 +1,17 @@
 <p align="center">
-  <img src="assets/mockmark_logo.png" alt="MockMark Logo" width="180" />
+  <img src="assets/mocksee_logo.png" alt="MockSee Logo" width="600" />
 </p>
 
-<h1 align="center">MockMark</h1>
+<h1 align="center">MockSee</h1>
 
 <p align="center">
   <strong>Development-only visual indicators for mock data in React, Vue, and Angular applications.</strong>
 </p>
 
 <p align="center">
-  <a href="https://www.npmjs.com/package/mockmark"><img src="https://img.shields.io/npm/v/mockmark.svg" alt="npm version" /></a>
-  <a href="https://www.npmjs.com/package/mockmark"><img src="https://img.shields.io/npm/dm/mockmark.svg" alt="npm downloads" /></a>
-  <a href="https://github.com/orangebread/mockmark/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/mockmark.svg" alt="license" /></a>
+  <a href="https://www.npmjs.com/package/mocksee"><img src="https://img.shields.io/npm/v/mocksee.svg" alt="npm version" /></a>
+  <a href="https://www.npmjs.com/package/mocksee"><img src="https://img.shields.io/npm/dm/mocksee.svg" alt="npm downloads" /></a>
+  <a href="https://github.com/user/mocksee/blob/main/LICENSE"><img src="https://img.shields.io/npm/l/mocksee.svg" alt="license" /></a>
 </p>
 
 <p align="center">
@@ -23,9 +23,9 @@
 </p>
 
 
-MockMark is a development-only library for developers who prototype UI components with mock data before integrating real APIs or databases.
+MockSee is a development-only library for developers who prototype UI components with mock data before integrating real APIs or databases.
 
-When building front-end first, it's easy to lose track of which components are still using placeholder data—especially as your app grows. MockMark wraps mock-data-driven components with subtle visual indicators (borders, badges, or minimal outlines) so you always know what's "real" vs. "fake" at a glance.
+When building front-end first, it's easy to lose track of which components are still using placeholder data—especially as your app grows. MockSee wraps mock-data-driven components with subtle visual indicators (borders, badges, or minimal outlines) so you always know what's "real" vs. "fake" at a glance.
 
 ## Use Cases
 
@@ -33,13 +33,13 @@ When building front-end first, it's easy to lose track of which components are s
 - **AI-Assisted Development** — Visually distinguish between AI-generated mock implementations and finalized, production-ready code
 - **Design system development** — Clearly mark placeholder content in component libraries
 - **Onboarding & handoffs** — New team members instantly see what still needs integration
-- **Sprint planning** — Use MockMark as a living checklist of unfinished data connections
+- **Sprint planning** — Use MockSee as a living checklist of unfinished data connections
 - **Demo builds** — Ensure you never accidentally ship mock data by making it visually obvious
 - **Code reviews** — Reviewers can spot mock dependencies without digging through code
 
-## Why MockMark?
+## Why MockSee?
 
-Unlike `// TODO` comments buried in code, MockMark surfaces incomplete work directly in the UI where you can't ignore it. This is especially powerful when pair-programming with AI: it creates an unambiguous visual distinction between AI-scaffolded mock implementations and finalized code. The visual feedback disappears automatically in production (via the `enabled` prop), so there's zero risk of shipping debug artifacts.
+Unlike `// TODO` comments buried in code, MockSee surfaces incomplete work directly in the UI where you can't ignore it. This is especially powerful when pair-programming with AI: it creates an unambiguous visual distinction between AI-scaffolded mock implementations and finalized code. The visual feedback disappears automatically in production (via the `enabled` prop), so there's zero risk of shipping debug artifacts.
 
 ---
 
@@ -48,19 +48,19 @@ Unlike `// TODO` comments buried in code, MockMark surfaces incomplete work dire
 ### React
 
 ```bash
-npm install mockmark
+npm install mocksee
 ```
 
 ### Vue
 
 ```bash
-npm install @mockmark/vue
+npm install @mocksee/vue
 ```
 
 ### Angular
 
 ```bash
-npm install @mockmark/angular
+npm install @mocksee/angular
 ```
 
 ---
@@ -70,31 +70,31 @@ npm install @mockmark/angular
 ### React
 
 ```tsx
-import { MockMark, MockMarkProvider } from 'mockmark'
+import { MockSee, MockSeeProvider } from 'mocksee'
 
 // Wrap your app with the provider
 function App() {
   return (
-    <MockMarkProvider 
+    <MockSeeProvider 
       enabled={process.env.NODE_ENV === 'development'}
       defaultVariant="border"
       tooltipTrigger="hover"
     >
       <YourApp />
-    </MockMarkProvider>
+    </MockSeeProvider>
   )
 }
 
 // Mark components with mock data
 function AdvisorList() {
   return (
-    <MockMark label="Advisors" reason="Not connected to database">
+    <MockSee label="Advisors" reason="Not connected to database">
       <div className="grid">
         {mockAdvisors.map(advisor => (
           <AdvisorCard key={advisor.id} advisor={advisor} />
         ))}
       </div>
-    </MockMark>
+    </MockSee>
   )
 }
 ```
@@ -103,38 +103,42 @@ function AdvisorList() {
 
 ```vue
 <script setup>
-import { MockMark, MockMarkProvider } from '@mockmark/vue'
+import { MockSee, MockSeeProvider } from '@mocksee/vue'
 </script>
 
 <template>
-  <MockMarkProvider :enabled="isDev" default-variant="border">
-    <MockMark label="Users" reason="Using mock data">
+  <MockSeeProvider :enabled="isDev" default-variant="border">
+    <MockSee label="Users" reason="Using mock data">
       <UserList :users="mockUsers" />
-    </MockMark>
-  </MockMarkProvider>
+    </MockSee>
+  </MockSeeProvider>
 </template>
 ```
 
 ### Angular
 
 ```typescript
-import { MockMarkComponent, MockMarkProviderComponent } from '@mockmark/angular'
+import { MockSeeComponent, MockSeeService } from '@mocksee/angular'
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [MockMarkComponent, MockMarkProviderComponent],
+  imports: [MockSeeComponent],
   template: `
-    <mockmark-provider [enabled]="isDev" defaultVariant="border">
-      <mockmark label="Products" reason="Static mock data">
-        <app-product-list [products]="mockProducts" />
-      </mockmark>
-    </mockmark-provider>
+    <mock-see label="Products" reason="Static mock data">
+      <app-product-list [products]="mockProducts" />
+    </mock-see>
   `
 })
 export class AppComponent {
-  isDev = !environment.production
   mockProducts = [...]
+  
+  constructor(private mockSeeService: MockSeeService) {
+    this.mockSeeService.configure({
+      enabled: !environment.production,
+      defaultVariant: 'border'
+    })
+  }
 }
 ```
 
@@ -145,36 +149,36 @@ export class AppComponent {
 ### Global Configuration (React)
 
 ```tsx
-import { MockMarkProvider } from 'mockmark'
+import { MockSeeProvider } from 'mocksee'
 
 function App() {
   return (
-    <MockMarkProvider 
+    <MockSeeProvider 
       enabled={process.env.NODE_ENV === 'development'}
       defaultVariant="border"
       tooltipTrigger="hover"
       theme={{ borderColor: '#8b5cf6' }}
     >
       <YourApp />
-    </MockMarkProvider>
+    </MockSeeProvider>
   )
 }
 ```
 
 ### Tooltip Trigger Modes
 
-MockMark displays the `reason` prop as an elegant tooltip. Choose how tooltips are triggered:
+MockSee displays the `reason` prop as an elegant tooltip. Choose how tooltips are triggered:
 
-- `hover` (default): Tooltip appears when hovering over the MockMark container
+- `hover` (default): Tooltip appears when hovering over the MockSee container
 - `click`: Tooltip appears when clicking the label badge (allows click-through to content beneath)
 
 ```tsx
 // Click mode - great for touch devices or when content has hover interactions
-<MockMarkProvider tooltipTrigger="click">
-  <MockMark reason="Click the label to see this">
+<MockSeeProvider tooltipTrigger="click">
+  <MockSee reason="Click the label to see this">
     <YourComponent />
-  </MockMark>
-</MockMarkProvider>
+  </MockSee>
+</MockSeeProvider>
 ```
 
 ### Markdown in Tooltips
@@ -182,7 +186,7 @@ MockMark displays the `reason` prop as an elegant tooltip. Choose how tooltips a
 The `reason` prop supports markdown formatting for richer descriptions:
 
 ```tsx
-<MockMark 
+<MockSee 
   label="API" 
   reason="**Status:** Waiting on backend
 
@@ -193,7 +197,7 @@ This endpoint needs:
 See [API docs](https://docs.example.com) for details."
 >
   <UserTable />
-</MockMark>
+</MockSee>
 ```
 
 Supported markdown:
@@ -212,16 +216,16 @@ Supported markdown:
 - `minimal`: Thin outline with corner label
 
 ```tsx
-<MockMark variant="minimal" label="API">
+<MockSee variant="minimal" label="API">
   <DataTable />
-</MockMark>
+</MockSee>
 ```
 
 ---
 
 ## Props
 
-### MockMark Component
+### MockSee Component
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
@@ -235,19 +239,19 @@ Supported markdown:
 | `tooltipBg` | string | - | Override tooltip background color |
 | `tooltipColor` | string | - | Override tooltip text color |
 
-### MockMarkProvider
+### MockSeeProvider (React/Vue)
 
 | Prop | Type | Default | Description |
 |------|------|---------|-------------|
 | `enabled` | boolean | true | Enable/disable all indicators |
 | `defaultVariant` | 'border' \| 'badge' \| 'minimal' | 'border' | Default visual style |
 | `tooltipTrigger` | 'hover' \| 'click' | 'hover' | How tooltips are triggered |
-| `theme` | MockMarkTheme | - | Custom styling |
+| `theme` | MockSeeTheme | - | Custom styling |
 
 ### Theme Options
 
 ```tsx
-interface MockMarkTheme {
+interface MockSeeTheme {
   borderColor?: string      // Indicator border color
   labelBg?: string          // Badge background color
   labelColor?: string       // Badge text color
@@ -262,9 +266,9 @@ interface MockMarkTheme {
 
 ## Demo
 
-See MockMark in action using the included demo apps. They showcase all variants and usage patterns in realistic environments.
+See MockSee in action using the included demo apps. They showcase all variants and usage patterns in realistic environments.
 
-![MockMark Demo Preview](assets/mockmark_demo.png)
+![MockSee Demo Preview](assets/mocksee_demo.png)
 
 To run the demos locally:
 
@@ -285,10 +289,10 @@ npm run dev:angular
 
 | Package | Description |
 |---------|-------------|
-| [`mockmark`](https://www.npmjs.com/package/mockmark) | React adapter |
-| [`@mockmark/vue`](https://www.npmjs.com/package/@mockmark/vue) | Vue 3 adapter |
-| [`@mockmark/angular`](https://www.npmjs.com/package/@mockmark/angular) | Angular 17+ adapter |
-| `@mockmark/core` | Framework-agnostic core (internal) |
+| [`mocksee`](https://www.npmjs.com/package/mocksee) | React adapter |
+| [`@mocksee/vue`](https://www.npmjs.com/package/@mocksee/vue) | Vue 3 adapter |
+| [`@mocksee/angular`](https://www.npmjs.com/package/@mocksee/angular) | Angular 17+ adapter |
+| `@mocksee/core` | Framework-agnostic core (internal) |
 
 ---
 
@@ -298,8 +302,8 @@ We welcome contributions! This is a pnpm monorepo.
 
 ```bash
 # Clone the repo
-git clone https://github.com/orangebread/mockmark.git
-cd mockmark
+git clone https://github.com/user/mocksee.git
+cd mocksee
 
 # Install dependencies
 pnpm install
@@ -314,10 +318,10 @@ pnpm dev:react
 ### Project Structure
 
 ```
-mockmark/
+mocksee/
 ├── packages/
 │   ├── core/      # Framework-agnostic utilities and styles
-│   ├── react/     # React adapter (published as `mockmark`)
+│   ├── react/     # React adapter (published as `mocksee`)
 │   ├── vue/       # Vue adapter
 │   └── angular/   # Angular adapter
 └── examples/
@@ -330,4 +334,4 @@ mockmark/
 
 ## License
 
-MIT © [orangebread](https://github.com/orangebread)
+MIT

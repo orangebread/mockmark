@@ -1,7 +1,7 @@
 /**
- * Visual style variants for MockMark
+ * Visual style variants for MockSee
  */
-export type MockMarkVariant = "border" | "badge" | "minimal"
+export type MockSeeVariant = "border" | "badge" | "minimal"
 
 /**
  * Tooltip trigger mode - hover shows on hover anywhere, click only triggers on label click
@@ -9,9 +9,9 @@ export type MockMarkVariant = "border" | "badge" | "minimal"
 export type TooltipTrigger = "hover" | "click"
 
 /**
- * Theme configuration for MockMark styling
+ * Theme configuration for MockSee styling
  */
-export interface MockMarkTheme {
+export interface MockSeeTheme {
     /** Border color for the indicator */
     borderColor?: string
     /** Background color for the label badge */
@@ -29,15 +29,15 @@ export interface MockMarkTheme {
 }
 
 /**
- * Global configuration for MockMark provider
+ * Global configuration for MockSee provider
  */
-export interface MockMarkConfig {
-    /** Whether MockMark indicators are enabled (default: true in development) */
+export interface MockSeeConfig {
+    /** Whether MockSee indicators are enabled (default: true in development) */
     enabled?: boolean
     /** Default visual variant */
-    defaultVariant?: MockMarkVariant
+    defaultVariant?: MockSeeVariant
     /** Theme customization */
-    theme?: MockMarkTheme
+    theme?: MockSeeTheme
     /** How to trigger tooltip: "hover" (default) or "click" (click only applies to label) */
     tooltipTrigger?: TooltipTrigger
 }
@@ -45,17 +45,17 @@ export interface MockMarkConfig {
 /**
  * Context value type with required fields + defaults
  */
-export interface MockMarkContextValue {
+export interface MockSeeContextValue {
     enabled: boolean
-    defaultVariant: MockMarkVariant
-    theme: Required<MockMarkTheme>
+    defaultVariant: MockSeeVariant
+    theme: Required<MockSeeTheme>
     tooltipTrigger: TooltipTrigger
 }
 
 /**
- * Per-instance color overrides for MockMark component
+ * Per-instance color overrides for MockSee component
  */
-export interface MockMarkColorOverrides {
+export interface MockSeeColorOverrides {
     /** Override label badge background color */
     labelBg?: string
     /** Override label badge text color */

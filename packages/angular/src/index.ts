@@ -1,15 +1,15 @@
 // Components
-export { MockMarkComponent } from "./mockmark.component"
+export { MockSeeComponent } from "./mocksee.component"
 
 // Services
-export { MockMarkService } from "./mockmark.service"
+export { MockSeeService } from "./mocksee.service"
 
 // Types (re-export from core)
 export type {
-    MockMarkVariant,
+    MockSeeVariant,
     TooltipTrigger,
-    MockMarkTheme,
-    MockMarkConfig,
-    MockMarkContextValue,
-    MockMarkColorOverrides,
-} from "@mockmark/core"
+    MockSeeTheme,
+    MockSeeConfig,
+    MockSeeContextValue,
+    MockSeeColorOverrides,
+} from "@mocksee/core"

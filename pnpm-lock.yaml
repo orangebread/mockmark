@@ -29,7 +29,7 @@ importers:
       '@angular/platform-browser-dynamic':
         specifier: ^19.0.0
         version: 19.2.17(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/compiler@19.2.17)(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(@angular/platform-browser@19.2.17(@angular/common@19.2.17(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1))(rxjs@7.8.2))(@angular/core@19.2.17(rxjs@7.8.2)(zone.js@0.15.1)))
-      '@mockmark/angular':
+      '@mocksee/angular':
         specifier: workspace:*
         version: link:../../packages/angular
       rxjs:
@@ -57,7 +57,7 @@ importers:
 
   examples/react-demo:
     dependencies:
-      mockmark:
+      mocksee:
         specifier: workspace:*
         version: link:../../packages/react
       react:
@@ -106,7 +106,7 @@ importers:
 
   examples/vue-demo:
     dependencies:
-      '@mockmark/vue':
+      '@mocksee/vue':
         specifier: workspace:*
         version: link:../../packages/vue
       vue:
@@ -128,7 +128,7 @@ importers:
 
   packages/angular:
     dependencies:
-      '@mockmark/core':
+      '@mocksee/core':
         specifier: workspace:*
         version: link:../core
       tslib:
@@ -165,7 +165,7 @@ importers:
 
   packages/react:
     dependencies:
-      '@mockmark/core':
+      '@mocksee/core':
         specifier: workspace:*
         version: link:../core
       react:
@@ -190,7 +190,7 @@ importers:
 
   packages/vue:
     dependencies:
-      '@mockmark/core':
+      '@mocksee/core':
         specifier: workspace:*
         version: link:../core
     devDependencies:

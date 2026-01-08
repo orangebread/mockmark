@@ -1,8 +1,8 @@
 "use client"
 
 import * as React from "react"
-import { useMockMark } from "./context"
-import type { MockMarkProps } from "./types"
+import { useMockSee } from "./context"
+import type { MockSeeProps } from "./types"
 import {
     mergeTheme,
     applyColorOverrides,
@@ -11,7 +11,7 @@ import {
     getTooltipStyles,
     getArrowStyles,
     parseMarkdown,
-} from "@mockmark/core"
+} from "@mocksee/core"
 
 /**
  * Development-only visual indicator for components using mock data.
@@ -24,12 +24,12 @@ import {
  * 
  * @example
  * ```tsx
- * <MockMark label="API Data" reason="Not connected to backend">
+ * <MockSee label="API Data" reason="Not connected to backend">
  *   <UserList users={mockUsers} />
- * </MockMark>
+ * </MockSee>
  * ```
  */
-export function MockMark({
+export function MockSee({
     label = "MOCK",
     reason,
     description,
@@ -44,8 +44,8 @@ export function MockMark({
     borderColor,
     tooltipBg,
     tooltipColor,
-}: MockMarkProps) {
-    const config = useMockMark()
+}: MockSeeProps) {
+    const config = useMockSee()
     const resolvedVariant = variant ?? config.defaultVariant
 
     // Merge global theme with per-instance overrides

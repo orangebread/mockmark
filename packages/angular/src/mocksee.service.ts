@@ -1,16 +1,16 @@
 import { Injectable, signal } from "@angular/core"
-import type { MockMarkContextValue, MockMarkConfig, MockMarkTheme } from "@mockmark/core"
-import { defaultTheme, mergeTheme } from "@mockmark/core"
+import type { MockSeeContextValue, MockSeeConfig, MockSeeTheme } from "@mocksee/core"
+import { defaultTheme, mergeTheme } from "@mocksee/core"
 
 /**
- * Service for global MockMark configuration.
+ * Service for global MockSee configuration.
  * Inject this service and call configure() to set global options.
  */
 @Injectable({
     providedIn: "root",
 })
-export class MockMarkService {
-    private readonly _config = signal<MockMarkContextValue>({
+export class MockSeeService {
+    private readonly _config = signal<MockSeeContextValue>({
         enabled: true,
         defaultVariant: "border",
         theme: defaultTheme,
@@ -21,14 +21,14 @@ export class MockMarkService {
     readonly config = this._config.asReadonly()
 
     /** Get current configuration value */
-    get value(): MockMarkContextValue {
+    get value(): MockSeeContextValue {
         return this._config()
     }
 
     /**
-     * Configure global MockMark settings
+     * Configure global MockSee settings
      */
-    configure(config: MockMarkConfig): void {
+    configure(config: MockSeeConfig): void {
         this._config.set({
             enabled: config.enabled ?? true,
             defaultVariant: config.defaultVariant ?? "border",
@@ -38,7 +38,7 @@ export class MockMarkService {
     }
 
     /**
-     * Enable or disable MockMark globally
+     * Enable or disable MockSee globally
      */
     setEnabled(enabled: boolean): void {
         this._config.update((current) => ({ ...current, enabled }))
@@ -47,7 +47,7 @@ export class MockMarkService {
     /**
      * Update theme
      */
-    setTheme(theme: Partial<MockMarkTheme>): void {
+    setTheme(theme: Partial<MockSeeTheme>): void {
         this._config.update((current) => ({
             ...current,
             theme: mergeTheme(theme),

@@ -1,5 +1,5 @@
 {
-    "name": "mockmark",
+    "name": "mocksee",
     "version": "0.2.0",
     "description": "Development-only visual indicators for mock data in React applications",
     "main": "dist/index.js",
@@ -30,7 +30,7 @@
         "react-dom": ">=18.0.0"
     },
     "dependencies": {
-        "@mockmark/core": "workspace:*"
+        "@mocksee/core": "workspace:*"
     },
     "devDependencies": {
         "@types/react": "^19.0.0",
@@ -51,7 +51,7 @@
     "license": "MIT",
     "repository": {
         "type": "git",
-        "url": "https://github.com/orangebread/mockmark"
+        "url": "https://github.com/user/mocksee"
     },
     "sideEffects": false
 }

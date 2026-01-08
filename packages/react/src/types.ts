@@ -1,10 +1,10 @@
 import * as React from "react"
-import type { MockMarkVariant, MockMarkColorOverrides, TooltipFormat } from "@mockmark/core"
+import type { MockSeeVariant, MockSeeColorOverrides, TooltipFormat } from "@mocksee/core"
 
 /**
- * Props for the MockMark component
+ * Props for the MockSee component
  */
-export interface MockMarkProps extends MockMarkColorOverrides {
+export interface MockSeeProps extends MockSeeColorOverrides {
     /** Label displayed on the indicator badge */
     label?: string
     /** Reason/description shown in tooltip */
@@ -12,7 +12,7 @@ export interface MockMarkProps extends MockMarkColorOverrides {
     /** Alias for reason - description shown in tooltip */
     description?: string
     /** Visual style variant */
-    variant?: MockMarkVariant
+    variant?: MockSeeVariant
     /** Force disable this specific indicator */
     disabled?: boolean
     /** Tooltip content format: "text" (default) or "markdown" */
@@ -24,4 +24,3 @@ export interface MockMarkProps extends MockMarkColorOverrides {
     /** Additional inline styles */
     style?: React.CSSProperties
 }
-

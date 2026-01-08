@@ -1,15 +1,16 @@
 {
-    "name": "mockmark-monorepo",
+    "name": "mocksee-monorepo",
     "private": true,
     "scripts": {
         "build": "pnpm -r build",
-        "build:core": "pnpm --filter @mockmark/core build",
-        "build:react": "pnpm --filter mockmark build",
+        "build:core": "pnpm --filter @mocksee/core build",
+        "build:react": "pnpm --filter mocksee build",
         "typecheck": "pnpm -r typecheck",
         "dev:react": "pnpm --filter react-demo dev",
         "dev:vue": "pnpm --filter vue-demo dev",
         "dev:angular": "pnpm --filter angular-demo dev",
-        "publish:all": "pnpm build && pnpm -r publish --access public"
+        "build:libs": "pnpm --filter './packages/*' build",
+        "publish:all": "pnpm build:libs && pnpm -r publish --access public"
     },
     "devDependencies": {
         "typescript": "^5.0.0"

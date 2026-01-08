@@ -1,11 +1,11 @@
 // Types
 export type {
-    MockMarkVariant,
+    MockSeeVariant,
     TooltipTrigger,
-    MockMarkTheme,
-    MockMarkConfig,
-    MockMarkContextValue,
-    MockMarkColorOverrides,
+    MockSeeTheme,
+    MockSeeConfig,
+    MockSeeContextValue,
+    MockSeeColorOverrides,
 } from "./types"
 
 // Theme utilities

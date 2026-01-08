@@ -1,9 +1,9 @@
-import type { MockMarkTheme, MockMarkColorOverrides } from "./types"
+import type { MockSeeTheme, MockSeeColorOverrides } from "./types"
 
 /**
- * Default theme values for MockMark
+ * Default theme values for MockSee
  */
-export const defaultTheme: Required<MockMarkTheme> = {
+export const defaultTheme: Required<MockSeeTheme> = {
     borderColor: "#f97316",
     labelBg: "#f97316",
     labelColor: "#ffffff",
@@ -16,7 +16,7 @@ export const defaultTheme: Required<MockMarkTheme> = {
 /**
  * Merge user theme with defaults
  */
-export function mergeTheme(theme?: Partial<MockMarkTheme>): Required<MockMarkTheme> {
+export function mergeTheme(theme?: Partial<MockSeeTheme>): Required<MockSeeTheme> {
     return { ...defaultTheme, ...theme }
 }
 
@@ -24,9 +24,9 @@ export function mergeTheme(theme?: Partial<MockMarkTheme>): Required<MockMarkThe
  * Apply per-instance color overrides to a resolved theme
  */
 export function applyColorOverrides(
-    theme: Required<MockMarkTheme>,
-    overrides?: MockMarkColorOverrides
-): Required<MockMarkTheme> {
+    theme: Required<MockSeeTheme>,
+    overrides?: MockSeeColorOverrides
+): Required<MockSeeTheme> {
     if (!overrides) return theme
     return {
         ...theme,

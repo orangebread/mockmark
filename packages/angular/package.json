@@ -1,5 +1,5 @@
 {
-    "name": "@mockmark/angular",
+    "name": "@mocksee/angular",
     "version": "0.2.0",
     "description": "Development-only visual indicators for mock data in Angular applications",
     "main": "dist/index.js",
@@ -28,7 +28,7 @@
         "@angular/core": ">=17.0.0"
     },
     "dependencies": {
-        "@mockmark/core": "workspace:*",
+        "@mocksee/core": "workspace:*",
         "tslib": "^2.6.0"
     },
     "devDependencies": {

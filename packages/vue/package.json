@@ -1,5 +1,5 @@
 {
-    "name": "@mockmark/vue",
+    "name": "@mocksee/vue",
     "version": "0.2.0",
     "description": "Development-only visual indicators for mock data in Vue applications",
     "main": "dist/index.js",
@@ -28,7 +28,7 @@
         "vue": "^3.0.0"
     },
     "dependencies": {
-        "@mockmark/core": "workspace:*"
+        "@mocksee/core": "workspace:*"
     },
     "devDependencies": {
         "tsup": "^8.0.0",

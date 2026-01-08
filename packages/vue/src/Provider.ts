@@ -1,20 +1,20 @@
 import { defineComponent, type PropType } from "vue"
-import { provideMockMark } from "./useConfig"
-import type { MockMarkVariant, TooltipTrigger, MockMarkTheme } from "@mockmark/core"
+import { provideMockSee } from "./useConfig"
+import type { MockSeeVariant, TooltipTrigger, MockSeeTheme } from "@mocksee/core"
 
-export const MockMarkProvider = defineComponent({
-    name: "MockMarkProvider",
+export const MockSeeProvider = defineComponent({
+    name: "MockSeeProvider",
     props: {
         enabled: {
             type: Boolean,
             default: true,
         },
         defaultVariant: {
-            type: String as PropType<MockMarkVariant>,
+            type: String as PropType<MockSeeVariant>,
             default: "border",
         },
         theme: {
-            type: Object as PropType<Partial<MockMarkTheme>>,
+            type: Object as PropType<Partial<MockSeeTheme>>,
             default: undefined,
         },
         tooltipTrigger: {
@@ -23,7 +23,7 @@ export const MockMarkProvider = defineComponent({
         },
     },
     setup(props, { slots }) {
-        provideMockMark({
+        provideMockSee({
             enabled: props.enabled,
             defaultVariant: props.defaultVariant,
             theme: props.theme,

@@ -1,7 +1,7 @@
 {
-    "name": "@mockmark/core",
+    "name": "@mocksee/core",
     "version": "0.2.0",
-    "description": "Shared core logic for MockMark - development-only visual indicators",
+    "description": "Shared core logic for MockSee - development-only visual indicators",
     "main": "dist/index.js",
     "module": "dist/index.mjs",
     "types": "dist/index.d.ts",
@@ -29,7 +29,7 @@
         "typescript": "^5.0.0"
     },
     "keywords": [
-        "mockmark",
+        "mocksee",
         "core",
         "mock-data"
     ],

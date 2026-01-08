@@ -8,7 +8,7 @@ import {
     ChangeDetectionStrategy,
 } from "@angular/core"
 import { CommonModule } from "@angular/common"
-import { MockMarkService } from "./mockmark.service"
+import { MockSeeService } from "./mocksee.service"
 import {
     mergeTheme,
     applyColorOverrides,
@@ -17,11 +17,11 @@ import {
     getTooltipStyles,
     getArrowStyles,
     parseMarkdown,
-} from "@mockmark/core"
-import type { MockMarkVariant, TooltipFormat } from "@mockmark/core"
+} from "@mocksee/core"
+import type { MockSeeVariant, TooltipFormat } from "@mocksee/core"
 
 @Component({
-    selector: "mock-mark",
+    selector: "mock-see",
     standalone: true,
     imports: [CommonModule],
     changeDetection: ChangeDetectionStrategy.OnPush,
@@ -59,13 +59,13 @@ import type { MockMarkVariant, TooltipFormat } from "@mockmark/core"
         </div>
     `,
 })
-export class MockMarkComponent {
-    private readonly mockMarkService = inject(MockMarkService)
+export class MockSeeComponent {
+    private readonly mockSeeService = inject(MockSeeService)
 
     @Input() label = "MOCK"
     @Input() reason?: string
     @Input() description?: string
-    @Input() variant?: MockMarkVariant
+    @Input() variant?: MockSeeVariant
     @Input() disabled = false
     @Input() format: TooltipFormat = "text"
     @Input() labelBg?: string
@@ -74,7 +74,7 @@ export class MockMarkComponent {
     @Input() tooltipBg?: string
     @Input() tooltipColor?: string
 
-    protected readonly config = this.mockMarkService.config
+    protected readonly config = this.mockSeeService.config
     protected readonly tooltipVisible = signal(false)
 
     protected readonly resolvedVariant = computed(
